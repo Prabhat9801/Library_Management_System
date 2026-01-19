@@ -56,52 +56,258 @@ Library_Management_System/
 ## 🚀 Installation & Setup
 
 ### Prerequisites
-- Python 3.8 or higher
-- pip (Python package manager)
-- A modern web browser (Chrome, Firefox, Edge, etc.)
 
-### Step 1: Install Backend Dependencies
+Before you begin, ensure you have the following installed on your system:
 
-Open a terminal/command prompt and navigate to the backend folder:
+- **Python 3.8 or higher** - [Download Python](https://www.python.org/downloads/)
+- **pip** (Python package manager) - Usually comes with Python
+- **Git** - [Download Git](https://git-scm.com/downloads)
+- **A modern web browser** - Chrome, Firefox, Edge, or Safari
+
+### Quick Start Guide
+
+Follow these steps to get the Library Management System up and running on your local machine:
+
+---
+
+## 📥 Step 1: Clone the Repository
+
+Open your terminal/command prompt and clone the repository:
+
+```bash
+git clone https://github.com/Prabhat9801/Library_Management_System.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Library_Management_System
+```
+
+---
+
+## 🔧 Step 2: Backend Setup
+
+### 2.1 Navigate to Backend Directory
 
 ```bash
 cd backend
 ```
 
-Install the required Python packages:
+### 2.2 Create a Virtual Environment (Recommended)
+
+**For Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**For macOS/Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+You should see `(venv)` in your terminal prompt, indicating the virtual environment is active.
+
+### 2.3 Install Backend Dependencies
+
+Install all required Python packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 2: Run the Backend Server
+This will install:
+- FastAPI
+- Uvicorn
+- SQLAlchemy
+- Pydantic
+- python-multipart
 
-Start the FastAPI server using Uvicorn:
+### 2.4 Start the Backend Server
+
+Run the FastAPI server using Uvicorn:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-You should see output like:
+**Expected Output:**
 ```
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process
-INFO:     Started server process
+INFO:     Started reloader process [xxxxx]
+INFO:     Started server process [xxxxx]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 
-The backend API is now running at: **http://localhost:8000**
+✅ **Backend is now running at:** `http://localhost:8000`
 
-You can access the interactive API documentation at: **http://localhost:8000/docs**
+📚 **API Documentation available at:** `http://localhost:8000/docs`
 
-### Step 3: Open the Frontend
+> **Note:** Keep this terminal window open. The backend server must remain running for the frontend to work.
 
-Open the frontend folder and double-click on **index.html** to open it in your default browser.
+---
 
-Alternatively, you can right-click on any HTML file and select "Open with" → your preferred browser.
+## 🎨 Step 3: Frontend Setup
 
-**Important:** Make sure the backend server is running before using the frontend!
+### 3.1 Open a New Terminal
+
+Open a **new** terminal/command prompt window (keep the backend server running in the previous terminal).
+
+### 3.2 Navigate to Frontend Directory
+
+From the project root directory:
+
+```bash
+cd frontend
+```
+
+### 3.3 Open the Application
+
+You have **three options** to run the frontend:
+
+#### **Option 1: Double-Click (Easiest)**
+- Simply double-click on `index.html` in the `frontend` folder
+- It will open in your default web browser
+
+#### **Option 2: Right-Click Method**
+- Right-click on `index.html`
+- Select **"Open with"** → Choose your preferred browser
+
+#### **Option 3: Command Line**
+
+**For Windows:**
+```bash
+start index.html
+```
+
+**For macOS:**
+```bash
+open index.html
+```
+
+**For Linux:**
+```bash
+xdg-open index.html
+```
+
+#### **Option 4: Using a Local Server (Optional)**
+
+For a more production-like environment, you can use Python's built-in HTTP server:
+
+```bash
+python -m http.server 3000
+```
+
+Then open your browser and navigate to: `http://localhost:3000`
+
+---
+
+## ✅ Step 4: Verify Installation
+
+### 4.1 Check Backend
+
+1. Open your browser and go to: `http://localhost:8000/docs`
+2. You should see the FastAPI interactive documentation (Swagger UI)
+3. Try the health check endpoint by clicking on `GET /` → **Try it out** → **Execute**
+4. You should receive a response with status 200
+
+### 4.2 Check Frontend
+
+1. The home page should load with a purple gradient header
+2. You should see navigation links: Home, Add Book, View Books, Issue Book, Return Book
+3. All navigation links should work without errors
+
+### 4.3 Test the Complete System
+
+1. **Add a Book:**
+   - Go to "Add Book" page
+   - Fill in: Book ID: `B001`, Title: `Python Programming`, Author: `John Doe`, Category: `Technology`, Quantity: `5`
+   - Click "Add Book"
+   - You should see a success message
+
+2. **View Books:**
+   - Go to "View Books" page
+   - You should see the book you just added in the table
+
+3. **Issue a Book:**
+   - Go to "Issue Book" page
+   - Enter: Student Name: `Alice Smith`, Book ID: `B001`, Issue Date: (today's date)
+   - Click "Issue Book"
+   - The book quantity should decrease to 4
+
+4. **Return a Book:**
+   - Go to "Return Book" page
+   - Find the issued book in the table
+   - Click "Return Book"
+   - The book quantity should increase back to 5
+
+---
+
+## 🛑 Stopping the Application
+
+### Stop Backend Server
+- Go to the terminal running the backend
+- Press `Ctrl + C` (Windows/Linux) or `Cmd + C` (macOS)
+
+### Stop Frontend
+- Simply close the browser tab
+
+### Deactivate Virtual Environment (if used)
+```bash
+deactivate
+```
+
+---
+
+## 🔄 Running the Application Again
+
+After the initial setup, you only need to:
+
+1. **Start Backend:**
+   ```bash
+   cd backend
+   # Activate virtual environment (if using one)
+   venv\Scripts\activate  # Windows
+   # or
+   source venv/bin/activate  # macOS/Linux
+   
+   # Start server
+   uvicorn main:app --reload
+   ```
+
+2. **Open Frontend:**
+   - Double-click `frontend/index.html` or use any method from Step 3.3
+
+---
+
+## 📦 Project Structure After Setup
+
+```
+Library_Management_System/
+├── backend/
+│   ├── venv/                # Virtual environment (if created)
+│   ├── main.py              # FastAPI application
+│   ├── models.py            # Database models
+│   ├── schemas.py           # Pydantic schemas
+│   ├── database.py          # Database configuration
+│   ├── requirements.txt     # Python dependencies
+│   └── library.db           # SQLite database (auto-created)
+│
+└── frontend/
+    ├── index.html           # Home page
+    ├── add-book.html        # Add book page
+    ├── add-book.js          # Add book logic
+    ├── view-books.html      # View books page
+    ├── view-books.js        # View books logic
+    ├── issue-book.html      # Issue book page
+    ├── issue-book.js        # Issue book logic
+    ├── return-book.html     # Return book page
+    ├── return-book.js       # Return book logic
+    └── styles.css           # Global styles
+```
 
 ## 📖 Usage Guide
 
@@ -248,6 +454,49 @@ This Library Management System was developed following the **Iterative Developme
 4. **Testing** - Validated functionality and error handling
 5. **Deployment** - Local deployment with clear instructions
 6. **Maintenance** - Designed for easy updates and improvements
+
+---
+
+## 📌 Quick Reference Commands
+
+### First Time Setup
+```bash
+# Clone repository
+git clone https://github.com/Prabhat9801/Library_Management_System.git
+cd Library_Management_System
+
+# Setup backend
+cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # macOS/Linux
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+# Open frontend (in new terminal)
+cd frontend
+start index.html  # Windows
+open index.html  # macOS
+xdg-open index.html  # Linux
+```
+
+### Daily Usage
+```bash
+# Start backend
+cd backend
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # macOS/Linux
+uvicorn main:app --reload
+
+# Open frontend
+Double-click frontend/index.html
+```
+
+### Important URLs
+- **Frontend:** Open `frontend/index.html` in browser
+- **Backend API:** http://localhost:8000
+- **API Documentation:** http://localhost:8000/docs
+- **GitHub Repository:** https://github.com/Prabhat9801/Library_Management_System
 
 ---
 
