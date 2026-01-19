@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Library Management System</h1>
+            <p class="subtitle">Return Book</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="add-book.html" class="nav-link">Add Book</a>
+            <a href="view-books.html" class="nav-link">View Books</a>
+            <a href="issue-book.html" class="nav-link">Issue Book</a>
+            <a href="return-book.html" class="nav-link active">Return Book</a>
+        </nav>
+
+        <main class="main-content">
+            <div id="alertContainer"></div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="color: #667eea;">Books Pending Return</h2>
+                <p style="color: #6c757d; margin-top: 10px;">Click the "Return" button to process a book return</p>
+                <button onclick="loadIssuedBooks()" class="btn btn-primary" style="margin-top: 15px;">
+                    🔄 Refresh List
+                </button>
+            </div>
+
+            <div id="loadingSpinner" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading issued books...</p>
+            </div>
+
+            <div class="table-container">
+                <table id="issuedBooksTable">
+                    <thead>
+                        <tr>
+                            <th>Record ID</th>
+                            <th>Student Name</th>
+                            <th>Book ID</th>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>Issue Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issuedBooksTableBody">
+                        <!-- Issued books will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyMessage" style="text-align: center; padding: 40px; display: none;">
+                <p style="font-size: 1.2rem; color: #6c757d;">✅ All books have been returned!</p>
+                <a href="issue-book.html" class="btn btn-primary" style="margin-top: 15px;">Issue a Book</a>
+            </div>
+
+            <!-- Return History Section -->
+            <div style="margin-top: 50px;">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">Return History</h2>
+
+                <div id="historyLoadingSpinner" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading return history...</p>
+                </div>
+
+                <div class="table-container">
+                    <table id="returnHistoryTable">
+                        <thead>
+                            <tr>
+                                <th>Record ID</th>
+                                <th>Student Name</th>
+                                <th>Book Title</th>
+                                <th>Issue Date</th>
+                                <th>Return Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="returnHistoryTableBody">
+                            <!-- Return history will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="historyEmptyMessage" style="text-align: center; padding: 40px; display: none;">
+                    <p style="font-size: 1.2rem; color: #6c757d;">📚 No return history available.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Library Management System | Built with FastAPI & Vanilla JS</p>
+        </footer>
+    </div>
+
+    <script src="return-book.js"></script>
+</body>
+
+</html>

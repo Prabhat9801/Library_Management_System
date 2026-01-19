@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Book - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Library Management System</h1>
+            <p class="subtitle">Issue Book to Student</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="add-book.html" class="nav-link">Add Book</a>
+            <a href="view-books.html" class="nav-link">View Books</a>
+            <a href="issue-book.html" class="nav-link active">Issue Book</a>
+            <a href="return-book.html" class="nav-link">Return Book</a>
+        </nav>
+
+        <main class="main-content">
+            <div id="alertContainer"></div>
+
+            <div class="form-container">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 25px;">Issue Book to Student</h2>
+
+                <form id="issueBookForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Name *</label>
+                        <input type="text" id="studentName" name="studentName" required placeholder="e.g., John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookId">Book ID *</label>
+                        <input type="text" id="bookId" name="bookId" required placeholder="e.g., B001">
+                        <small style="color: #6c757d; display: block; margin-top: 5px;">
+                            💡 Tip: Check <a href="view-books.html" style="color: #667eea;">View Books</a> page for
+                            available book IDs
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueDate">Issue Date *</label>
+                        <input type="date" id="issueDate" name="issueDate" required>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn btn-primary">Issue Book</button>
+                        <button type="reset" class="btn btn-secondary" style="margin-left: 10px;">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Currently Issued Books Section -->
+            <div style="margin-top: 50px;">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">Currently Issued Books</h2>
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <button onclick="loadIssuedBooks()" class="btn btn-primary">🔄 Refresh List</button>
+                </div>
+
+                <div id="loadingSpinner" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading issued books...</p>
+                </div>
+
+                <div class="table-container">
+                    <table id="issuedBooksTable">
+                        <thead>
+                            <tr>
+                                <th>Record ID</th>
+                                <th>Student Name</th>
+                                <th>Book ID</th>
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>Issue Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="issuedBooksTableBody">
+                            <!-- Issued books will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="emptyMessage" style="text-align: center; padding: 40px; display: none;">
+                    <p style="font-size: 1.2rem; color: #6c757d;">📚 No books currently issued.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Library Management System | Built with FastAPI & Vanilla JS</p>
+        </footer>
+    </div>
+
+    <script src="issue-book.js"></script>
+</body>
+
+</html>

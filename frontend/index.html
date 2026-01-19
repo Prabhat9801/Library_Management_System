@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Library Management System</h1>
+            <p class="subtitle">Manage your library efficiently</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="add-book.html" class="nav-link">Add Book</a>
+            <a href="view-books.html" class="nav-link">View Books</a>
+            <a href="issue-book.html" class="nav-link">Issue Book</a>
+            <a href="return-book.html" class="nav-link">Return Book</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h2>Welcome to the Library Management System</h2>
+                <p>Select an option from the navigation menu to get started:</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Add Books</h3>
+                    <p>Add new books to the library inventory with details like title, author, category, and quantity.</p>
+                    <a href="add-book.html" class="btn btn-primary">Go to Add Book</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>View Books</h3>
+                    <p>Browse all available books in the library with their current availability status.</p>
+                    <a href="view-books.html" class="btn btn-primary">Go to View Books</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Issue Books</h3>
+                    <p>Issue books to students and track the issue date and student information.</p>
+                    <a href="issue-book.html" class="btn btn-primary">Go to Issue Book</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">↩️</div>
+                    <h3>Return Books</h3>
+                    <p>Process book returns and automatically update the inventory quantity.</p>
+                    <a href="return-book.html" class="btn btn-primary">Go to Return Book</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Library Management System | Built with FastAPI & Vanilla JS</p>
+        </footer>
+    </div>
+</body>
+</html>

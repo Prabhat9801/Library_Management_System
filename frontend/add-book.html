@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Library Management System</h1>
+            <p class="subtitle">Add New Book</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="add-book.html" class="nav-link active">Add Book</a>
+            <a href="view-books.html" class="nav-link">View Books</a>
+            <a href="issue-book.html" class="nav-link">Issue Book</a>
+            <a href="return-book.html" class="nav-link">Return Book</a>
+        </nav>
+
+        <main class="main-content">
+            <div id="alertContainer"></div>
+
+            <div class="form-container">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 25px;">Add New Book to Library</h2>
+
+                <form id="addBookForm">
+                    <div class="form-group">
+                        <label for="bookId">Book ID *</label>
+                        <input type="text" id="bookId" name="bookId" required placeholder="e.g., B001">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Book Title *</label>
+                        <input type="text" id="title" name="title" required placeholder="e.g., The Great Gatsby">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author">Author *</label>
+                        <input type="text" id="author" name="author" required placeholder="e.g., F. Scott Fitzgerald">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <input type="text" id="category" name="category" required
+                            placeholder="e.g., Fiction, Science, History">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity *</label>
+                        <input type="number" id="quantity" name="quantity" required min="0" placeholder="e.g., 5">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit" class="btn btn-primary">Add Book</button>
+                        <button type="reset" class="btn btn-secondary" style="margin-left: 10px;">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Library Management System | Built with FastAPI & Vanilla JS</p>
+        </footer>
+    </div>
+
+    <script src="add-book.js"></script>
+</body>
+
+</html>

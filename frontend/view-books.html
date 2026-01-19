@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Books - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Library Management System</h1>
+            <p class="subtitle">View All Books</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="add-book.html" class="nav-link">Add Book</a>
+            <a href="view-books.html" class="nav-link active">View Books</a>
+            <a href="issue-book.html" class="nav-link">Issue Book</a>
+            <a href="return-book.html" class="nav-link">Return Book</a>
+        </nav>
+
+        <main class="main-content">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="color: #667eea;">Library Book Inventory</h2>
+                <button onclick="loadBooks()" class="btn btn-primary" style="margin-top: 15px;">
+                    🔄 Refresh Books
+                </button>
+            </div>
+
+            <div id="loadingSpinner" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading books...</p>
+            </div>
+
+            <div id="alertContainer"></div>
+
+            <div class="table-container">
+                <table id="booksTable">
+                    <thead>
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booksTableBody">
+                        <!-- Books will be loaded here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyMessage" style="text-align: center; padding: 40px; display: none;">
+                <p style="font-size: 1.2rem; color: #6c757d;">📚 No books found in the library.</p>
+                <a href="add-book.html" class="btn btn-primary" style="margin-top: 15px;">Add Your First Book</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Library Management System | Built with FastAPI & Vanilla JS</p>
+        </footer>
+    </div>
+
+    <script src="view-books.js"></script>
+</body>
+
+</html>
